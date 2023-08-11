@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+void selection_sort(vector<int>&v,int n)
+{
+	int mini,temp;
+	for(int i=0;i<n-2;i++)
+	{
+		mini=i;
+		for(int j=i;j<=n-1;j++)
+		{
+			if(v[j]<v[mini])
+			  mini=j;
+		}
+    	temp=v[mini];
+    	v[mini]=v[i];
+	    v[i]=temp;
+	}
+    for(int i=0;i<n;i++)
+      cout<<v[i]<<" ";
+}
+int main() {
+	// your code goes here
+	int n;
+	cin>>n;
+	vector<int>v(n);
+	for(int i=0;i<n;i++)
+	{
+		cin>>v[i];
+	}
+	selection_sort(v,n);
+	return 0;
+}
